@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .box{
+        padding: 100px 0;
+        width: 400px;
+        text-align: center;
+        background: #ddd;
+        margin: 20px;
+        display: inline-block;
+    }
+    div{
+        margin-top: .5rem;
+    }
+    button{
+        margin-top: .5rem;
+    }
+    .changeT{
+        border: 2px solid rgba(0,0,0,0.6);
+        border-radius: 15px;
+        cursor: pointer;
+        text-align: center;
+        background: rgba(168, 228, 17, 0.373);
+    }
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Vue project</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+</head>
+
+<body style="display: grid; justify-content: center;align-content: center;
+height: 100vh; ">
+    <h2>Hello mr Vue 😇 </h2>
+    <div id="app">
+        <div v-if="showContent">
+            <h3>{{title}} <br> {{age}}</h3>
+
+            <!-- React system
+           function Button() {
+            const [counter, setCounter] = useState(10);
+            return (
+            <button onClick={()=> setCounter(counter+1)}>{counter}</button>
+            );
+            }    
+            -->
+
+            
+            <button v-on:click="age++">Increase</button>
+            <button v-on:click="age--">Decrease</button>
+            <!-- <div @click="title = 'something else happenings here'">Change title</div> -->
+            <div class="changeT" @click="changeTitle">Change title</div>
+
+
+            <ul>
+                <li v-for="book in books">
+                    <h3>{{book.title}}</h3>
+                    <div>{{book.author}}</div>
+                </li>
+            </ul>
+
+        </div>
+
+        <button @click="showContentToggle">
+            <span v-if="showContent">Hide</span>
+            <span v-else>Show</span>
+        </button>
+        <br>
+        <div v-show="showContentToggle">Currently showing</div>
+        <!-- mouse event -->
+        <!-- <div class="box" @mouseover="handleEvents($event, 5)">Mouseover (enter)</div>
+        <div class="box" @mouseleave="handleEvents">Mouseleave</div>
+        <div class="box" @dblclick="handleEvents">Double Click</div>
+        <div class="box" @mousemove="handleMousemove">Mouse postion {{x}} - {{y}}</div> -->
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
