@@ -36,10 +36,18 @@
 height: 100vh; ">
     <h2>Hello mr Vue 😇 </h2>
     <div id="app">
+
+
+        <!-- attribute binding -->
+        <!-- <a v-bind:href="url" target="_blank">Learn Vue.js</a> -->
+        <!-- short hand of attribute binding -->
+        <a :href="url" target="_blank">Learn Vue.js</a>
+
+
         <div v-if="showContent">
             <h3>{{title}} <br> {{age}}</h3>
 
-            <!-- React system
+            <!-- React system ==
            function Button() {
             const [counter, setCounter] = useState(10);
             return (
@@ -57,6 +65,7 @@ height: 100vh; ">
 
             <ul>
                 <li v-for="book in books">
+                    <img :src="book.img" :alt="book.title">
                     <h3>{{book.title}}</h3>
                     <div>{{book.author}}</div>
                 </li>
